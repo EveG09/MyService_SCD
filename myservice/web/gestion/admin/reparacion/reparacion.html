@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<div class="row my-3" style="margin-left: 5px">
+
+    <!-- Diseño de la Tabla de Reparacion -->
+    <div id="divTablaReparacion" class="col-12">
+        <div class="card border-dark">
+            <div class="card-header bg-white">
+                <span id="titulo2" >Cat&aacute;logo de Reparación</span>
+                <img class="float-start" src="media/img/favicon.png" alt="" style="width: 45px; margin-right: 10px;">
+                <button class="btn-sm btn-danger float-end" onclick="cerrarModulo();" id="estiloInputText">
+                    <i class="fas fa-times"></i>
+                    &nbsp;&nbsp;Cerrar M&oacute;dulo
+                </button>
+                <button class="btn-sm btn-success float-end mx-2" data-bs-toggle="modal" data-bs-target="#divAgregarReparacion" onclick="cleanForm()" id="estiloInputText">
+                    <i class="fas fa-plus"></i>
+                    &nbsp;&nbsp;Agregar Reparación
+                </button>
+            </div>
+            <div class="card-body">
+                <div class="form  input-group">
+                    <div class="input-group-text" id="estiloInputText">Buscar:</div>
+                    <input type="text" class="form-control" id="txtBuscar" placeholder="Escribe aqu&iacute;" />
+                    <button class="btn-sm btn-success float-end mx-2" onclick="printTable();" id="estiloInputText">
+                        <i class="fas fa-print"></i>
+                        &nbsp;&nbsp;Imprimir
+                    </button> </div>
+                <table class="table table-hover" style="text-align: center;">
+                    <thead id="estiloInputText">
+                        <tr class="text-center">                            
+                            <th>Nombre</th>
+                            <th>Costo</th>
+                            <th>Tipo de Reparación</th>
+                            <th>Descripción</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyReparacion">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Diseño del Agregar Reparacion -->
+    <div class="modal fade" id="divAgregarReparacion" tabindex="-1"  aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+
+                    <img class="float-start" src="media/img/favicon.png" alt="" style="width: 45px; margin-right: 10px;">
+                    <span id="titulo2">Agregar Reparación</span>                    
+                    <button class="btn btn-close btn-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="card border-dark bg-white">
+                        <div class="card-body">
+                            <div class="form">
+                                <div class="input-group">
+                                    <!--<div class="input-group-text">C&oacute;digo de la Reparaci&oacute;n:</div>-->
+                                    <input id="txtCodigo" type="hidden" class="form-control"/>
+                                </div>
+                                <div class="input-group my-3">
+                                    <div class="input-group-text">Nombre:</div>
+                                    <input id="txtNombre" type="text" placeholder="Nombre" class="form-control"/>
+                                </div>
+                                <div class="input-group my-3">
+                                    <div class="input-group-text">Costo:</div>
+                                    <input id="txtCosto" type="number" placeholder="$" class="form-control"/>
+                                </div>
+                                <div class="input-group my-3 col-12">
+                                    <div class="input-group-text">Tipo de Reparación:</div>
+                                    <select id="txtTipo">                                     
+                                        <option value="Electricidad">Electricidad</option>
+                                        <option value="Carpintería">Carpintería</option>
+                                        <option value="Herrería">Herrería</option>
+                                        <option value="Montado de muebles">Montado de muebles</option>
+                                        <option value="Pintura">Pintura</option>
+                                        <option value="Fontanería">Fontanería</option>
+                                        <option value="Plomería">Plomería</option>
+                                        <option value="Instalación de ventanas">Instalación de ventanas</option>
+                                    </select>
+                                </div>                                
+                                <div class="input-group my-3">
+                                    <div class="input-group-text">Descripción:</div>
+                                    <input id="txtDescripción" type="text" placeholder="Detalle de la Reparación" class="form-control"/>
+                                </div>                                
+
+                            </div>
+                        </div>
+                        <div class="my-3 text-center">
+                            <button class="btn btn-outline-primary" onclick="save();"><i class="fa fa-save mx-1"></i>Guardar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="divDetalleReparacion" tabindex="-1"  aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+
+                    <img class="float-start" src="media/img/favicon.png" alt="" style="width: 45px; margin-right: 10px;">
+                    <span id="titulo2">Detalle de Reparación</span>
+                    <button class="btn btn-close btn-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="card border-dark bg-white">
+                        <div class="card-body">
+                            <div class="form">
+                                <div class="input-group">
+                                    <!--<div class="input-group-text">C&oacute;digo de la Reparaci&oacute;n:</div>-->
+                                    <input id="txtCodigoD" type="hidden" class="form-control" />
+                                </div>
+                                <div class="input-group my-3">
+                                    <div class="input-group-text">Nombre:</div>
+                                    <input id="txtNombreD" type="text" placeholder="Nombre" class="form-control"/>
+                                </div>
+                                <div class="input-group my-3">
+                                    <div class="input-group-text">Costo:</div>
+                                    <input id="txtCostoD" type="number" placeholder="$" class="form-control"/>
+                                </div>
+                                <div class="input-group my-3 col-12">
+                                    <div class="input-group-text">Tipo de Reparación:</div>
+                                    <select id="txtTipoD">                                     
+                                        <option value="Electricidad">Electricidad</option>
+                                        <option value="Carpintería">Carpintería</option>
+                                        <option value="Herrería">Herrería</option>
+                                        <option value="Montado de muebles">Montado de muebles</option>
+                                        <option value="Pintura">Pintura</option>
+                                        <option value="Fontanería">Fontanería</option>
+                                        <option value="Plomería">Plomería</option>
+                                        <option value="Instalación de ventanas">Instalación de ventanas</option>
+                                    </select>
+                                </div>                                
+                                <div class="input-group my-3">
+                                    <div class="input-group-text">Descripción:</div>
+                                    <input id="txtDescripciónD" type="text" placeholder="Detalle de la Reparación" class="form-control"/>
+                                </div>                                
+
+                            </div>
+                        </div>
+                        <div class="my-3 text-center">
+                            <button class="btn btn-outline-success mx-3" onclick="update();"><i class="fa-solid fa-pen-to-square mx-1"></i>Actualizar</button>
+                            <button class="btn btn-outline-danger mx-3" onclick="remove();"><i class="fa-solid fa-trash-can mx-1"></i>Eliminar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="gestion/admin/reparacion/reparacion.js"></script>
+<script type="text/javascript" >refreshTable();</script>
+<script type="text/javascript" >initializeSearcher();</script>

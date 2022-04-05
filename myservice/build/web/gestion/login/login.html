@@ -1,0 +1,38 @@
+<div class="container w-75 bg-white mt-5 rounded shadow">
+    <div class="row align-items-stretch">
+        <div class="col bg">
+        </div>
+        <div class="col">
+            <div class="text-end">
+                <img src="media/img/favicon.png" width="120" alt="">
+            </div>
+            <h2 class="fw-bold text-center py-2" id="estiloInputText">Bienvenido usuario</h2>
+            <div class="form">
+                <div class="mb-4" >
+                    <label for="email" class="form-label" id="estiloInputText"> <i class="fa fa-user"></i>: Usuario</label>
+                    <input type="text" id="txtNombreUsuario" class="form-control">
+                </div>
+                <div class="mb-4" >
+                    <label for="password" class="form-label" id="estiloInputText"><i class="fa-solid fa-key"></i>: Password</label>
+                    <input type="password" id="txtContrasenia" class="form-control" name="password">
+                </div>
+                <div class="col-md-12 mb-4">
+                    <label class="form-label" id="estiloInputText">Rol de usuario:</label>
+                    <select id="cmbRoles">
+                        <option value="Administrador">Administrador</option>
+                        <option value="Colaborador">Colaborador</option>
+                        <option value="Cliente">Cliente</option>
+                    </select>
+                </div>
+                <div class="d-grid">
+                    <button  class="btn btn-primary" id="estiloInputText" onclick="validateLogin();">Iniciar Sesi&oacute;n</button>
+                </div>
+                <div class="container w-100 my-5">
+                    <div class="row text-center"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<script type="text/javascript" src="../../js/modulosPrincipales.js"></script>

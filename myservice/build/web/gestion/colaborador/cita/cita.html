@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<div class="row my-3" style="margin-left: 5px">
+    
+     <!-- Diseño de la Tabla para elegir cliente-->
+    <div class="modal fade" id="divTablaClientes" tabindex="-1"  aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <img class="float-start" src="media/img/favicon.png" alt="" style="width: 45px; margin-right: 10px;">
+                    <span id="titulo2" class="h2" style="font-size: 30px;">Elegir cliente</span>
+                    <button class="btn btn-close btn-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="card border-dark bg-white">
+                        <div class="card-body">
+                            <table class="table table-hover" style="text-align: center;">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre del cliente</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbodyClientes">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Diseño de la Tabla de CIta-->
+    <div id="divTablaCita" class="col-12">
+        <div class="card border-dark">
+            <div class="card-header bg-white">
+                <span id="titulo2">Cat&aacute;logo de Citas</span>
+                <img class="float-start" src="media/img/favicon.png" alt="" style="width: 45px; margin-right: 10px;">
+                <button class="btn-sm btn-danger float-end" onclick="closeModule();" id="estiloInputText">
+                    <i class="fas fa-times"></i>
+                    &nbsp;&nbsp;Cerrar M&oacute;dulo
+                </button>
+                <button class="btn-sm btn-danger float-end mx-2" onclick="getAllAppointmentCancelled();">
+                    <i class="fas fa-eye"></i>
+                    Canceladas
+                </button>
+
+                <button class="btn-sm btn-success float-end mx-2" onclick="getAllAppointmentAttended();">
+                    <i class="fas fa-eye"></i>
+                    Atendidas
+                </button>                       
+                <button class="btn-sm btn-secondary float-end mx-2" onclick="getAllAppointment();">
+                    <i class="fas fa-eye"></i>
+                    Pendientes
+                </button> 
+            </div>
+            <div class="card-body">
+                <div class="form  input-group">
+                    <div class="input-group-text" id="estiloInputText">Buscar:</div>
+                    <input type="text" class="form-control" id="txtBuscar" placeholder="Escribe aqu&iacute;" />
+                    <button class="btn-sm btn-success float-end mx-2" onclick="printTable();" id="estiloInputText">
+                        <i class="fas fa-print"></i>
+                        &nbsp;&nbsp;Imprimir
+                    </button> </div>
+                <table class="table table-hover" style="text-align: center;">
+                    <thead id="estiloInputText">
+                        <tr class="text-center">                            
+                            <th>Fecha</th>
+                            <th>Nombre Cliente</th>
+                            <th>Reparación</th>
+                            <th>Horario</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyCita">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="gestion/colaborador/cita/cita.js"></script>
+<script type="text/javascript" >initializeModuleAppointment();</script>
+<script type="text/javascript" >getAllAppointment();</script>

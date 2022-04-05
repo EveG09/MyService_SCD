@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>MyService | Principal</title>
+        <link rel="shortcut icon" href="media/img/favicon.png">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style/style3.css">  
+        <link rel="stylesheet" type="text/css" href="style/style1.css">  
+        <!-- Boxiocns CDN Link -->
+        <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Daniel_Sanchez, Paula_Valencia, Sergio_Alba, Evelin_Garrido">
+        <link rel="stylesheet" type="text/css" href="style/bootstrap/css/bootstrap.min.css">       
+        <link rel="stylesheet" type="text/css" href="style/fontawesome-free-6.0.0-web/css/all.min.css">
+        <link type="text/css" rel="stylesheet" href="style/sweetalert2/sweetalert2.min.css">
+        <link rel="stylesheet" href="style/animatecss/animate.min.css">
+        <link rel="stylesheet" href="style/fonts/Trade_Winds/TradeWinds-Regular.ttf">
+        <link rel="stylesheet" href="style/fonts/Acme/Acme-Regular.ttf">
+    </head>
+    <body>
+        <div class="sidebar close">
+            <div class="logo-details">
+                <img src="media/img/favicon.png" alt="">
+                <span class="logo_name font">Administraci&oacute;n</span>
+            </div>
+            <ul class="nav-links" id="font">
+                <li>
+                    <a href="#" onclick="loadAppointmentModule();">
+                        <i class="fa-solid fa-calendar-plus"></i>
+                        <span class="link_name">Citas</span>
+                    </a>
+                    <ul class="sub-menu blank">
+                        <li><a class="link_name" href="#">Citas</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="profile-details">
+                        <div class="profile-content">
+                            <img src="media/img/clientes/avatar3.jpg" alt="profileImg">
+                        </div>
+                        <div class="name-job">
+                            <div class="profile_name"><span id="spanNombre">Invitado</span></div>
+                            <div class="job"><span id="spanPuesto">Guest</span></div>
+                        </div>
+                        <i class='bx bx-log-out' onclick="out()"></i>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <section class="home-section">
+            <div class="home-content">
+                <i class='bx bx-menu' ></i>
+            </div>
+            <div id="contenedorPrincipal" class="container-fluid"></div>
+        </section>
+
+        <script type="text/javascript" src="js/sideBar.js"></script>
+        <script type="text/javascript" src="js/jquery/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="style/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script type="text/javascript" src="style/sweetalert2/sweetalert2.all.min.js"></script>
+        <script type="text/javascript" src="js/modulosPrincipales.js"></script>
+        <script type="text/javascript" src="js/cliente/modulosInternos.js"></script>
+        <script type="text/javascript">initializeClientePage();</script>
+    </body>
+</html>

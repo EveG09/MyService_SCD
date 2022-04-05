@@ -1,0 +1,202 @@
+@font-face {
+    font-family: 'Trade Winds';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(fonts/Trade_Winds/TradeWinds-Regular.ttf) format('ttf');
+}
+
+@font-face {
+    font-family: 'Acme';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(fonts/Acme/Acme-Regular.ttf) format('ttf');
+}
+
+.font {
+    font-family: 'Trade Winds', cursive;
+}
+
+#font {
+    font-family: 'Acme', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #FFFFFF /* fallback for old browsers */
+/*    background: -webkit-linear-gradient(to left, #7db2d4, #c4e0e5);  Chrome 10-25, Safari 5.1-6 
+    background: linear-gradient(to left, #7db2d4, #c4e0e5);  W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+header {
+    width: 100%;
+    height: 100%;
+}
+
+header nav {
+    height: 100px;
+    background: #7cb8de;
+    display: flex;
+    justify-content: space-between
+}
+
+.enlaces {
+    display: flex;
+    height: 100%;
+    width: 60%;
+    justify-content: space-around;
+    align-items: center;
+/*    font-family: 'Dancing Script', cursive;*/
+}
+
+.enlaces a {
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    padding: 4px 0;
+    transition: 0.9s ease-out;
+    color: #000000;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+.enlaces a:hover,
+
+.activar {
+    border-bottom: 2px solid #1A237E;
+}
+
+nav .logo {
+    height: 100%;
+    margin-left: 40px;
+    margin-top: 5px;
+}
+
+@keyframes lateralIzquierda {
+    from {left: 200px;}
+    to {left: 0px;} 
+}
+
+nav .logo img {
+    object-fit: cover;
+    border-radius: 95%;
+    width: 100px;
+    position: relative;
+    animation-name: lateralIzquierda;
+    animation-duration: 3s;  
+    animation-fill-mode: forwards;
+}
+
+#titulo{
+    text-align: center;
+    font-size: 50px;
+    font-weight: 700;
+/*    font-family: 'Dancing Script', cursive;*/
+    color: #000000;
+}
+
+.titulo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+/*    font-family: 'Lobster', cursive;*/
+    color: #000000;   
+}
+
+#titulo2{
+    font-size: 25px;
+    font-weight: 700;
+/*    font-family: 'Dancing Script', cursive;*/
+}
+
+#tituloAcercaDe{
+    text-align: center;
+    font-size: 50px;
+/*    font-family: 'Dancing Script', cursive;*/
+    color: #000000;
+    margin-left: 58px;
+}
+
+#tituloContacto{
+    font-size: 35px;
+    font-weight: 700;
+/*    font-family: 'Dancing Script', cursive;*/
+}
+
+#estiloParrafo{
+    text-align: justify;
+    font-size: 20px;
+    margin-left: 56px;
+/*    font-family: 'Cormorant Garamond', serif;*/
+    font-weight: 700;
+}
+
+#separador{
+    color: #FF7043;
+    width: 80%;
+    margin-left: 80px;
+}
+
+#inicioImg{
+    margin-left: 125px;
+    width: 50%;
+}
+#salaImg{
+    width: 500px;
+    height: 380px;
+}
+#estiloInputText{
+/*    font-family: 'Dancing Script', cursive;*/
+}
+.estiloInputText{
+/*    font-family: 'Dancing Script', cursive;*/
+}
+#sucursalImg{
+    border: 5px solid black;
+    width: 500px;
+    height: 300px;
+    border-radius: 5%;
+}
+
+#login{
+    margin-left: 25%;
+    width: 250px;
+    height: 250px;
+    border-radius: 30%;
+}
+
+#btnLogin{
+    margin-left: 35%;
+}
+
+.bg{
+    background-image: url(../media/img/logimg.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+#logo2{
+    width: 70%;
+    height: 70%;
+    margin-left: 50px;
+    border-radius: 55%;
+    -webkit-transition: 1s linear;
+    transition: 1s linear;
+}
+
+#logo2:hover{
+    -webkit-transform: perspective(150px) rotateX(25deg);
+    transform: perspective(150px) rotateX(25deg);
+}
+
+.footer-nav{
+    background: #7cb8de;
+    width: 100%;
+    height: 100%;
+}

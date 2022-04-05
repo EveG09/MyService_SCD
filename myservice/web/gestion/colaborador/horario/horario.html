@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<div class="row my-3" style="margin-left: 5px">
+    
+    <!-- Diseño de la Tabla de Horario -->
+    <div id="divTablaHora" class="col-12">
+        <div class="card border-dark">
+           <div class="card-header bg-white">
+                <span id="titulo2" >Cat&aacute;logo de Horarios</span>
+                <img class="float-start" src="media/img/favicon.png" alt="" style="width: 45px; margin-right: 10px;">
+                <button class="btn-sm btn-danger float-end" onclick="closeModule();" id="estiloInputText">
+                    <i class="fas fa-times"></i>
+                    &nbsp;&nbsp;Cerrar M&oacute;dulo
+                </button>
+                <button class="btn-sm btn-success float-end mx-2" data-bs-toggle="modal" data-bs-target="#divAgregarHorario" onclick="clearForm()" id="estiloInputText">
+                    <i class="fas fa-plus"></i>
+                    &nbsp;&nbsp;Agregar Horario
+                </button>
+            </div>
+            <div class="card-body">
+                 <div class="form  input-group">
+                    <div class="input-group-text" id="estiloInputText">Buscar:</div>
+                    <input type="text" class="form-control" id="txtBuscar" placeholder="Escribe aqu&iacute;" />
+                    <button class="btn-sm btn-success float-end mx-2" onclick="printTable();" id="estiloInputText">
+                        <i class="fas fa-print"></i>
+                        &nbsp;&nbsp;Imprimir
+                    </button>
+                 </div>
+                 <table class="table table-hover" style="text-align: center;">
+                    <thead id="estiloInputText">
+                        <tr class="text-center">
+                            <th>Hora de inicio</th>
+                            <th>Hora de finalizaci&oacute;n</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyHorario">
+                    </tbody>
+                 </table>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Diseño del Agregar Horario -->
+    <div class="modal fade" id="divAgregarHorario" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <img class="float-start" src="media/img/favicon.png" alt="" style="width: 45px; margin-right: 10px;">
+                    <span id="titulo2">Agregar nuevo horario</span>
+                    <button class="btn btn-close btn-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="card border-dark bg-white">
+                        <div class="form row g-3 mx-2">
+                            <div class="col-md-12">
+                                <div class="input-group">
+                                    <input id="txtCodigoH"  type="hidden" class="form-control mx-2" />
+                                </div>                        
+                            </div>
+                            <div class="input-group my-3">
+                                <div class="input-group-text" id="estiloInputText">Hora de inicio:</div>
+                                <input id="txtHoraInicio" type="text" class="form-control" />
+                            </div>
+                            <div class="input-group my-3">
+                                <div class="input-group-text" id="estiloInputText">Hora de finalizaci&oacute;n</div>
+                                <input id="txtHoraFinalizacion" type="text" class="form-control" />
+                            </div>
+                            <div class="mt-4 mb-3 text-center">
+                                <button class="btn btn-outline-primary mx-3" onclick="save();" id="estiloInputText"><i class="fa fa-save mx-1"></i>Guardar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Diseño del Detalle de Horario -->
+    <div class="modal fade" id="divDetalleHorario" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <img class="float-start" src="media/img/favicon.png" alt="" style="width: 45px; margin-right: 10px;">
+                    <span id="titulo2">Detalle del horario</span>
+                    <button class="btn btn-close btn-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="card border-dark bg-white">
+                        <div class="form row g-3 mx-2">
+                            <div class="col-md-12">
+                                <div class="input-group">
+                                    <input id="txtDetalleCodigoH"  type="hidden" class="form-control mx-2" />
+                                </div>                        
+                            </div>
+                            <div class="input-group my-3">
+                                <div class="input-group-text" id="estiloInputText">Hora de inicio:</div>
+                                <input id="txtDetalleHoraInicio" type="text" class="form-control" />
+                            </div>
+                            <div class="input-group my-3">
+                                <div class="input-group-text" id="estiloInputText">Hora de finalizaci&oacute;n</div>
+                                <input id="txtDetalleHoraFinalizacion" type="text" class="form-control" />
+                            </div>
+                            <div class="mt-4 mb-3 text-center">
+                                <button class="btn btn-outline-success mx-3" onclick="update();" id="estiloInputText"><i class="fa-solid fa-pen-to-square mx-1"></i>Actualizar</button>
+                                <button class="btn btn-outline-danger mx-3"  onclick="remove();" id="estiloInputText"><i class="fa-solid fa-trash-can mx-1"></i>Eliminar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="gestion/colaborador/horario/horario.js"></script>
+<script type="text/javascript">refreshTable();</script>
+<script type="text/javascript">initializeSearcher();</script>

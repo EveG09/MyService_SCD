@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<div class="row my-3" style="margin-left: 5px">
+    <div class="col-12" id="divTablaColaborador">
+        <div class="card border-dark">
+            <div class="card-header bg-white">
+                <span id="titulo2">Cat&aacute;logo de Colaboradores</span>
+                <img class="float-start" src="media/img/favicon.png" alt="" style="width: 45px; margin-right: 10px;">
+                <button class="btn-sm btn-danger float-end" onclick="closeModule();" id="estiloInputText">
+                    <i class="fas fa-times"></i>
+                    &nbsp;&nbsp;Cerrar M&oacute;dulo
+                </button>
+                <button class="btn-sm btn-success float-end mx-4" data-bs-toggle="modal" data-bs-target="#divAgregarColaborador" onclick="cleanForm()" id="estiloInputText">
+                    <i class="fas fa-plus"></i>
+                    &nbsp;&nbsp;Agregar Colaborador
+                </button>
+            </div>
+            <div class="card-body">
+                <div class="form  input-group">
+                    <div class="input-group-text" id="estiloInputText">Buscar:</div>
+                    <input type="text" class="form-control" id="txtBuscar" placeholder="Escribe aqu&iacute;" >
+                    <button class="btn-sm btn-success float-end mx-2" onclick="printTable()" id="estiloInputText">
+                        <i class="fas fa-print"></i>
+                        &nbsp;&nbsp;Imprimir
+                    </button>
+                </div>
+                <table class="table table-hover" style="text-align: center;">
+                    <thead id="estiloInputText">
+                        <tr class="text-center">
+                            <th>Número de colaborador</th>
+                            <th>Nombre completo</th>
+                            <th>RFC</th>
+                            <th>Domicilio</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyColaborador">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="divAgregarColaborador" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content" style="height: 680px;">
+                <div class="modal-header">
+                    <img class="float-start" src="media/img/favicon.png" alt="" style="width: 45px; margin-right: 10px;">
+                    <span id="titulo2">Agregar nuevo colaborador</span>
+                    <button class="btn btn-close btn-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="card border-dark bg-white" style="height: 580px;">
+                        <div class="form row g-3 mx-2">
+                            <div class="col-md-12">
+                                <div class="input-group">
+                                    <input id="txtCodigoColaborador" type="hidden" class="form-control mx-2" />
+                                    <input id="txtCodigoPersona" type="hidden" class="form-control mx-2" />
+                                    <input id="txtCodigoUsuario" type="hidden" class="form-control mx-2" />
+                                </div>                        
+                            </div>
+                            <div style="color: #0932B3">
+                                <i class="fa-solid fa-face-laugh-beam"></i>
+                                <label  id="estiloInputText">Datos Personales</label>                      
+                            </div>
+                            <div class="col-md-4 my-2">
+                                <div class="input-group">
+                                    <div class="input-group-text"  id="estiloInputText">Nombre:</div>
+                                    <input id="txtNombre" type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-md-4 my-2">
+                                <div class="input-group">
+                                    <div class="input-group-text"  id="estiloInputText">Apellido paterno:</div>
+                                    <input id="txtApellidoPaterno" type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-md-4 my-2 text-center">
+                                <img src="media/img/avatar.png" id="imgColaboradorFoto" style="width: 200px;" />
+                            </div>
+                            <div class="col-md-4 my-2" style="position: absolute; top: 95px; width: 364px;">
+                                <div class="input-group">
+                                    <div class="input-group-text"  id="estiloInputText">Apellido materno:</div>
+                                    <input id="txtApellidoMaterno" type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-md-4 my-2" style="position: absolute; top: 95px; left: 370px; width: 364px;">
+                                <div class="input-group">
+                                    <div class="input-group-text" id="estiloInputText">RFC:</div>
+                                    <input id="txtRfc" type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-md-4 my-2" style="position: absolute; top: 260px; left: 750px;">
+                                <input id="inputFileFoto" type="file" onchange="uploadPhotography();" />
+                                <!-- <button class="btn btn-success my-5"><i class="fas fa-upload"></i>&nbsp;&nbsp;Cargar</button> -->
+                            </div>
+                            <div class="col-md-4 my-2" style="position: absolute; top: 150px; width: 364px;">
+                                <div class="input-group">
+                                    <div class="input-group-text"  id="estiloInputText" >Tel&eacute;fono:</div>
+                                    <input id="txtTelefono" type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-md-4 my-2" id="estiloInputText" style="position: absolute; top: 150px; left: 370px;">
+                                <div class="input-group">
+                                    <div class="input-group-text">G&eacute;nero:</div>
+                                    <select id="cmbGenero">
+                                        <option value="M">Hombre</option>
+                                        <option value="F">Mujer</option>
+                                        <option value="O">Otro</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6 my-2" style="position: absolute; top: 205px; width: 728px;">
+                                <div class="input-group">
+                                    <div class="input-group-text" id="estiloInputText">Domicilio:</div>
+                                    <input id="txtDomicilio" type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-md-6" style="position: absolute; top: 205px; width: 728px;">
+                                <div class="input-group my-5">
+                                    <input id="txtCodigoImagen" type="hidden" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="mt-3" style="color: #0932B3; position: absolute; top: 305px;">
+                                <i class="fas fa-user-shield"></i>
+                                <label id="estiloInputText">Datos de seguridad</label>                      
+                            </div>
+                            <div class="col-md-4" style="position: absolute; top: 340px; width: 364px;">
+                                <div class="input-group">
+                                    <div class="input-group-text" id="estiloInputText">Usuario:</div>
+                                    <input id="txtUsuario" type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-md-4" style="position: absolute; top: 340px; left: 370px; width: 364px;">
+                                <div class="input-group">
+                                    <div class="input-group-text" id="estiloInputText">Contrase&ntilde;a:</div>
+                                    <input id="txtContrasenia" type="password" class="form-control"/>
+                                </div>
+                            </div>
+                            <div class="col-md-4" style="position: absolute; top: 340px; left: 735px; width: 364px;">
+                                <div class="input-group">
+                                    <div class="input-group-text" id="estiloInputText">Rol:</div>
+                                    <input id="txtRol" placeholder="Colaborador" type="text" class="form-control" readonly="" />
+                                </div>
+                            </div>
+                            <div class="mt-3" style="color: #0932B3; position: absolute; top: 400px;">
+                                <i class="fas fa-portrait"></i>
+                                <label id="estiloInputText">Datos del colaborador</label>                      
+                            </div>
+                            <div class="col-md-4" style="position: absolute; top: 435px; width: 364px;">
+                                <div class="input-group">
+                                    <div class="input-group-text" id="estiloInputText">Puesto:</div>
+                                    <input id="txtPuesto" type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-md-8 my-2" style="position: absolute; top: 443px; left: 370px; width: 728px;">
+                                <div class="input-group">
+                                    <div class="input-group-text" id="estiloInputText">Descripci&oacute;n:</div>
+                                    <input id="txtDescripcion" type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-md-4" style="position: absolute; top: 480px;">
+                                <div class="input-group">
+                                    <input id="txtNumeroColaborador" type="hidden" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="mt-4 mb-3 text-center" style="position: absolute; top: 500px;">
+                                <button class="btn btn-outline-primary mx-3" onclick="save();" id="estiloInputText"><i class="fa fa-save mx-1"></i>Guardar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="gestion/admin/colaborador/colaborador.js"></script>
+<script type="text/javascript">refreshTable();</script>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<!--
+Titulo: Index
+Compañía: MyService
+Fecha de Creación: 17/03/2022
+-->
+<html>
+    <head>
+        <title>MyService | Solucionando Problemas</title>  
+        <!-- Required meta tags -->
+        <link rel="shortcut icon" href="media/img/favicon.png">
+        <meta charset="UTF-8">
+        <meta name="description" content="Aplicacion Web MyService">
+        <meta name="keywords" content="HTML,JavaScript,Bootstrap,CSS,API_REST,MySQL">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Daniel_Sanchez, Paula_Valencia, Sergio_Alba, Evelin_Garrido">
+
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" type="text/css" href="style/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="style/fontawesome-free-6.0.0-web/css/all.min.css">
+        <link type="text/css" rel="stylesheet" href="style/sweetalert2/sweetalert2.min.css"> 
+        <link rel="stylesheet" href="style/animatecss/animate.min.css">
+        <!-- Libreria typewriter-->
+        <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+        <!-- Estilos CSS -->
+        <link rel="stylesheet" type="text/css" href="style/style.css"> 
+
+    </head>
+    <body id="bodyIncio">
+        <!--========================================================== -->
+        <!-- ENCABEZADO -->
+        <!--========================================================== -->
+        <header class="container-fluid bg-white d-flex justify-content-center">
+        </header>
+
+        <nav  class="navbar navbar-expand-lg navbar-light p-3" >
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <span class="fs-5 fw-bold" style="color: #0D47A1">MyService</span>
+                </a>
+                <div class="banner_img">
+                    <img src="media/img/favicon.png" alt="">
+                </div>
+
+                <div class="collapse navbar-collapse enlaces">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link mx-2" href="#" onclick="loadStartModule();">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-2" href="#equipo" onclick="">Equipo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-2" href="#seccion-contacto" onclick="">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-2" href="#" onclick="loadLoginModule();">Iniciar Sesi&oacute;n</a>
+                        </li>
+                        <li class="nav-item" style="margin-left: 230px;">
+                         <div class="fb-like text-light mb-0 p-2 fs-6" data-href="https://developers.facebook.com/docs/plugins/" data-width="" data-layout="button" data-action="like" data-size="large" data-share="true"></div>
+                        </li>
+                    </ul>                    
+                </div>
+            </div>
+        </nav>
+        <div id="contenedorInicio">
+
+            <!--========================================================== -->
+            <!-- SLIDER DE IMAGENES-->
+            <!--========================================================== -->
+
+            <div id="carousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="3000">
+                        <img src="media/img/index/img1.jpg" class="d-block w-100" alt="">
+                    </div>
+
+
+                    <div class="carousel-item" data-bs-interval="3000">
+                        <img src="media/img/index/img2.jpeg" class="d-block w-100" alt="">
+                    </div>
+
+
+                    <div class="carousel-item" data-bs-interval="3000">
+                        <img src="media/img/index/img3.jpeg" class="d-block w-100" alt="">
+                    </div>
+
+
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carousel"  data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carousel"  data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>    
+
+
+
+            <!--========================================================== -->
+            <!-- INTRODUCCION DE SERVICIOS-->
+            <!--========================================================== -->
+
+
+            <section class="d-flex flex-column justify-content-center align-items-center pt-5  text-center w-50 m-auto" id="intro">
+                <h2 id="typewriter" style="font-weight: 700; color: #0D47A1"></h2>
+                <p class="p-3  fs-4">
+                    <span style="color: #0D47A1">MyService</span> es la agencia donde con ayuda de especialistas resolvemos los problemas de tu hogar.      
+                </p>  
+                <img id="img-equipo" src="media/img/index/img5.jpg">
+            </section>
+
+            <!--========================================================== -->
+            <!-- SERVICIOS QUE OFRECEMOS-->
+            <!--========================================================== -->
+            <div class="row" style="margin-top: 70px; margin-left: 40px; margin-right: 40px; text-align: center">
+                <h2 id="servicios" style="color: #0D47A1;"></h2>
+                <div class="col-3 cardServicios" >
+                    <div class="card" style="height: 400px;">
+                        <div class="card-header">
+                            <span style="font-weight: 700;">Carpinter&iacute;a</span>
+                        </div>
+                        <div class="card-body">                 
+                            <p style="text-align: justify;">Sustitución de bombines, repasos de puertas, ajuste de tapajuntas...</p>
+                            <img id="img-servicio-carpinteria" src="media/img/index/carpintera.jpg">                          
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 cardServicios">
+                    <div class="card" style="height: 400px;">
+                        <div class="card-header">
+                            <span style="font-weight: 700;">Fontaner&iacute;a</span>
+                        </div>
+                        <div class="card-body">
+                            <p style="text-align: justify;">Mantenimiento de su instalación, llaves de corte, de paso.</p>
+                            <img id="img-servicio-fontaneria" src="media/img/index/fonta.jpg">
+
+                        </div>
+
+                    </div>
+                </div>
+          
+                <div class="col-3 cardServicios">
+                    <div class="card" style="height: 400px;">
+                        <div class="card-header">
+                            <span style="font-weight: 700;">Montaje de muebles</span>
+                        </div>
+                        <div class="card-body">
+                            <p style="text-align: justify;">Montaje e instalación de muebles de tipo kit: IKEA, BRICODEPOT, LEROY MERLIN, etc..</p>
+                            <img id="img-servicio-montaje" src="media/img/index/montado.jpg">   
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 cardServicios" >
+                    <div class="card" style="height: 400px;">
+                        <div class="card-header">
+                            <span style="font-weight: 700;">Electricidad</span>
+                        </div>
+                        <div class="card-body">
+                            <p style="text-align: justify;">Reparaci&oacute;n de averías el&eacute;ctricas, instalaciones de pared o de techo.</p>
+                            <img id="img-servicio-electricidad" src="media/img/index/electricidad.jpg">  
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--========================================================== -->
+            <!-- SECCION ACERCA DE NOSOTROS-->
+            <!--========================================================== -->
+            <section>
+                <div class="container w-50 m-auto text-center" id="equipo">
+                    <h1 class="mt-5 mb-3 fs-2" id="tituloEquipo" style="margin-top: 60px; color: #0D47A1"></h1>
+                    <p class="fs-4 ">Siempre buscamos las personas adecuadas para que trabajen con nosotros. Si te sientes listo para este reto, te esperamos para que te unas a nosotros.</p>
+                </div>
+
+                <div class="mt-5 text-center">
+                    <img id="img-equipo" src="media/img/index/img4.jpg" alt="equipo">
+                </div>
+
+
+
+                <div id="local">                    
+                    <!--========================================================== -->
+                    <!-- SECCION DE UBICACIÓN-->
+                    <!--========================================================== -->
+                    <section class=" justify-content-start">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d6258.627457441062!2d-101.64741860377062!3d21.136376118315592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2smx!4v1648103452224!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </section>
+                    <div>
+                        <div class="wrapper-local">
+                            <h2>Conoce nuestra agencia</h2>
+                            <h2 class="text-primary mb-4"></h2>
+                            <p class="fs-5 text-body text-justify">Nos ubicamos en Le&oacute;n con el objetivo de estar cerca a nuestros clientes.</p>
+                            <p class="fs-5 text-body text-justify">El uso de esta plataforma es para brindarles mayor facilidad a usted nuestro querido cliente a la hora 
+                                de realizar una cita ofrecemos el mejor servicio ya que aqu&iacute; podr&aacute;n conocer todos los servicios con los que contamos. </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <!--========================================================== -->
+            <!-- SECCION CONTACTOS-->
+            <!--========================================================== -->
+
+            <section id="seccion-contacto" class="border-bottom border-secondary border-2">
+
+                <!--========================================================== -->
+                <!-- CONTENEDOR DEL FORMULARIO -->
+                <!--========================================================== -->
+                <div class="container  border-top border-primary " style="max-width: 500px" id="contenedor-formulario">
+                    <div class="text-center mb-4" id="titulo-formulario">
+                        <h2>Contactanos</h2>
+                        <p class="fs-5">Estamos aqu&iacute; para hacer realidad tus proyectos</p>
+                    </div>
+
+                    <form   method="POST" data-netlify="true" action="#">     
+                        <div class= "mb-3">           
+                            <input type="email" class="form-control" id="email" name="email" placeholder="nombre@ejemplo.com">
+                        </div>
+
+
+                        <div class="mb-3">            
+                            <input type="text" class="form-control" id="name"  placeholder="John Doe">
+                        </div>
+
+
+                        <div class="mb-3">
+                            <input type="tel" class="form-control" name="phone" id="phone" placeholder="Teléfono">
+                        </div>
+
+                        <div class="mb-3">       
+                            <textarea class="form-control" name="message" id="message" rows="4"></textarea>
+                        </div>
+
+                        <div class="mb-3">
+                            <button type="submit" class=" btn btn-primary w-100 fs-5">Enviar Mensaje</button>
+                        </div>
+                    </form>                    
+                </div>
+            </section>
+        </div>
+
+        <!--========================================================== -->
+        <!--FOOTER-->
+        <!--========================================================== -->
+        <footer class="w-100  d-flex  align-items-center justify-content-center flex-wrap">
+            <p class="fs-5 px-3  pt-3">MyService &copy; Todos Los Derechos Reservados 2022</p>
+        </footer>
+
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v11.0" nonce="0h7M6HVP"></script>
+        <script type="text/javascript" src="js/jquery/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="style/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script type="text/javascript" src="style/sweetalert2/sweetalert2.all.min.js"></script>
+        <script type="text/javascript" src="js/modulosPrincipales.js"></script>
+        <script type="text/javascript" src="js/modulosInternos.js"></script>
+        <script type="text/javascript" src="js/efectosLetras.js"></script>
+    </body>
+</html>
